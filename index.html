@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SHEEESH</title>
+</head>
+<body>
+  
+<div class="sidebar">
+  <ul>
+    <li class="sidebar-head"><img src="spider.png" class="header-img">My web</li>
+    <a href="index.html"><li> Main</li></a> 
+    <a href="about.html"><li> About</li></a> 
+    <a href="portfolio.html"><li>Portfolio</li></a>
+    <a href="client.html"><li>Our Client</li></a>
+    <li>We Care</li>
+    <a href="photographers.html"><li>Photographers</li></a>
+    <a href="contact.html"><li>Contact Us</li></a>
+  </ul>
+</div>
+
+<div class="main">
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 4</div>
+      <img src="landscape1.jpg" style="width:100%">
+      <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem veniam facilis error dignissimos rerum sit provident maxime deserunt, optio tenetur numquam ab porro dolor quia aliquam! Dignissimos ullam placeat possimus.</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 4</div>
+      <img src="landscape2.jpg" style="width:100%">
+      <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum laudantium, ex mollitia, labore asperiores autem doloribus repellat veritatis quas, consequatur tempora ea. Est blanditiis asperiores explicabo officia placeat minus quas!</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 4</div>
+      <img src="landscape3.jpg" style="width:100%">
+      <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas fugiat molestiae soluta quis magni quisquam dicta blanditiis, amet culpa autem repellendus cupiditate quidem cumque libero, dignissimos ullam nisi harum voluptates!</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">4 / 4</div>
+        <img src="landscape4.jpg" style="width:100%">
+        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas fugiat molestiae soluta quis magni quisquam dicta blanditiis, amet culpa autem repellendus cupiditate quidem cumque libero, dignissimos ullam nisi harum voluptates!</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+  
+  <div style="text-align:center" class="slideshow-dot">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+  </div>
+</div>
+<hr>
+
+  <div class="container">
+    <section class="column1">
+    <img src="anime1.jpg" width="100" height="69" onclick="myImageFunction(this)" class="zoom">
+    <br>
+    <img src="anime2.jpg" width="100" height="69" onclick="myImageFunction(this)" class="zoom">
+    <br>
+    <img src="anime3.jpg" width="100" height="69" onclick="myImageFunction(this)" class="zoom">
+    <br>
+    <img src="anime4.jpg"  width="100" height="69" onclick="myImageFunction(this)" class="zoom">
+    <br>
+    <img src="anime5.jpg" width="100" height="69" onclick="myImageFunction(this)" class="zoom">
+    </section>
+    <section class="column2">
+        <img id="img-box" src="anime1.jpg" alt="">
+    </section>
+  </div>
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+    function myImageFunction(productSmalling) {
+        var productFullImg = document.getElementById("img-box");
+        productFullImg.src = productSmalling.src
+}
+</script>
+
+<div class="main-footer"></div>
+</body>
+</html>
